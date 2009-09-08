@@ -17,7 +17,49 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-package "couchdb"
+if edge?
+  include_recipe "erlang"
+  
+  %w{libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev mime-support}.each { |p| package p }
+  
+  group "couchdb"
+  
+  user "couchdb" do
+    comment "CouchDB Administrator"
+    gid "couchdb"
+    home "/var/lib/couchdb"
+    shell "/bin/bash"
+  end
+  
+  subversion "CouchDB Edge" do
+    repository "http://svn.apache.org/repos/asf/couchdb/trunk"
+    revision "HEAD"
+    destination "/opt/couchdb-src"
+    user "couchdb"
+  end
+  
+  execute "configure couchdb" do
+    command "./configure"
+    cwd "/opt/couchdb-src"
+    user "couchdb"
+    group "couchdb"
+  end
+  
+  execute "make couchdb" do
+    command "make"
+    cwd "/opt/couchdb-src"
+    user "couchdb"
+    group "couchdb"
+  end
+  
+  execute "make couchdb" do
+    command "make install"
+    cwd "/opt/couchdb-src"
+  end
+  
+else
+  package "couchdb"
+end
 
 directory "/var/lib/couchdb" do
   owner "couchdb"
