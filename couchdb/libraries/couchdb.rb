@@ -1,5 +1,5 @@
 class Chef
-  class Cookbook
+  class Recipe
     def edge?
       @node[:couchdb][:edge]
     end
