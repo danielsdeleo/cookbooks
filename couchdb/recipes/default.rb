@@ -20,7 +20,7 @@
 if edge?
   include_recipe "erlang"
   
-  %w{libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev mime-support}.each { |p| package p }
+  %w{libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev mime-support subversion}.each { |p| package p }
   
   group "couchdb"
   
