@@ -39,14 +39,14 @@ if edge?
     action :sync
   end
   
-  execute "configure couchdb" do
+  bash "configure couchdb" do
     command "./configure"
     cwd "/opt/couchdb-src"
     user "couchdb"
     group "couchdb"
   end
   
-  execute "make couchdb" do
+  bash "make couchdb" do
     command "make"
     cwd "/opt/couchdb-src"
     user "couchdb"
