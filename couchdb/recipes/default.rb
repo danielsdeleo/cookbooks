@@ -22,20 +22,20 @@ if edge?
   
   %w{libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev mime-support subversion}.each { |p| package p }
   
-  group "couchdb"
-  
-  user "couchdb" do
-    comment "CouchDB Administrator"
-    gid "couchdb"
-    home "/var/lib/couchdb"
-    shell "/bin/bash"
-  end
+  # group "couchdb"
+  # 
+  # user "couchdb" do
+  #   comment "CouchDB Administrator"
+  #   gid "couchdb"
+  #   home "/var/lib/couchdb"
+  #   shell "/bin/bash"
+  # end
   
   subversion "CouchDB Edge" do
     repository "http://svn.apache.org/repos/asf/couchdb/trunk"
     revision "HEAD"
     destination "/opt/couchdb-src"
-    user "couchdb"
+    #user "couchdb"
     action :sync
   end
   
