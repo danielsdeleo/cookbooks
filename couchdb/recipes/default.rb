@@ -45,7 +45,7 @@ if edge?
   end
   
   execute "configure couchdb" do
-    command "./configure --prefix=/usr"
+    command "./configure --prefix=/usr --sysconfdir=/etc"
     cwd "/opt/couchdb-src"
   end
   
