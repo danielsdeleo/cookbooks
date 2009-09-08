@@ -36,6 +36,7 @@ if edge?
     revision "HEAD"
     destination "/opt/couchdb-src"
     user "couchdb"
+    action :sync
   end
   
   execute "configure couchdb" do
