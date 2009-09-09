@@ -19,8 +19,6 @@
 
 appname = "radiant"
 
-require "chef-deploy"
-
 include_recipe "git"
 include_recipe "sqlite"
 include_recipe "rails"
@@ -54,16 +52,16 @@ file "/srv/#{appname}/shared/sqlite/production.sqlite3" do
 end
 
 deploy "/srv/#{appname}" do
-  repo "git://github.com/radiant/radiant.git"
-  branch node[:radiant][:branch]
+  repo "http://localhost/svn/trunk"
+  revision "50"
   user "railsdev"
-  enable_submodules false
   migrate node[:radiant][:migrate]
   migration_command node[:radiant][:migrate_command]
   environment node[:radiant][:environment]
-  shallow_clone true
   revision node[:radiant][:revision]
   action node[:radiant][:action].to_sym
+  svn_username "subversion"
+  svn_password "subversion"
   restart_command "touch tmp/restart.txt"
 end
 
