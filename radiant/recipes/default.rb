@@ -60,6 +60,7 @@ deploy "/srv/#{appname}" do
   environment node[:radiant][:environment]
   revision node[:radiant][:revision]
   action node[:radiant][:action].to_sym
+  scm_provider Chef::Provider::Subversion
   svn_username "subversion"
   svn_password "subversion"
   restart_command "touch tmp/restart.txt"
