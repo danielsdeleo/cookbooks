@@ -1,6 +1,6 @@
 class Chef
   class Recipe
-    def edge?
+    def edge_couch?
       @node[:couchdb][:edge]
     end
   end

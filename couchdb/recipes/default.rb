@@ -17,10 +17,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if edge?
+if edge_couch?
   include_recipe "erlang"
   
-  %w{libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev mime-support subversion automake autoconf help2man}.each { |p| package p }
+  %w{ libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev 
+      mime-support subversion automake autoconf help2man}.each { |p| package p }
   
   # group "couchdb"
   # 
@@ -35,7 +36,6 @@ if edge?
     repository "http://svn.apache.org/repos/asf/couchdb/trunk"
     revision "HEAD"
     destination "/opt/couchdb-src"
-    #user "couchdb"
     action :sync
   end
   
