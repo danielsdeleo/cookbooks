@@ -21,4 +21,4 @@ couchdb Mash.new unless attribute?("couchdb")
 couchdb[:edge] = "false" unless couchdb[:edge]
 couchdb[:src_dir] = Chef::Config[:file_cache_path] + "/source/couchdb" unless couchdb.has_key?(:src_dir)
 couchdb[:revision] = "HEAD" unless couchdb.has_key?(:revision)
-couchdb[:configure]
+couchdb[:configure_prefix] = "/usr/local" unless couchdb.has_key?(:configure_prefix)

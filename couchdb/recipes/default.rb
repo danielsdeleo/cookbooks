@@ -32,22 +32,22 @@ if edge_couch?
   
   execute "bootstrap couchdb source" do
     command "./bootstrap"
-    cwd "/opt/couchdb-src"
+    cwd Chef::Config[:file_cache_path]
   end
   
   execute "configure couchdb" do
-    command "./configure --prefix=/usr --sysconfdir=/etc"
-    cwd "/opt/couchdb-src"
+    command "./configure --prefix=#{couchdb[:configure_prefix]}"
+    cwd Chef::Config[:file_cache_path]
   end
   
   execute "make couchdb" do
     command "make"
-    cwd "/opt/couchdb-src"
+    cwd Chef::Config[:file_cache_path]
   end
   
   execute "make couchdb" do
     command "make install"
-    cwd "/opt/couchdb-src"
+    cwd Chef::Config[:file_cache_path]
   end
   
 else
@@ -61,9 +61,14 @@ directory "/var/lib/couchdb" do
 end
 
 service "couchdb" do
-  if platform?("centos","redhat","fedora")
-    start_command "/sbin/service couchdb start &> /dev/null"
-    stop_command "/sbin/service couchdb stop &> /dev/null"
+  if edge_couch?
+    start_command "#{couchdb[:configure_prefix]}/etc/init.d/coucdb start"
+    start_command "#{couchdb[:configure_prefix]}/etc/init.d/coucdb stop"
+  else
+    if platform?("centos","redhat","fedora")
+      start_command "/sbin/service couchdb start &> /dev/null"
+      stop_command "/sbin/service couchdb stop &> /dev/null"
+    end
   end
   supports [ :restart, :status ]
   action [ :enable, :start ]
