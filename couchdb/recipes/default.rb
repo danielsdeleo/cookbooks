@@ -23,6 +23,15 @@ if edge_couch?
   %w{ libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev 
       mime-support subversion automake autoconf help2man}.each { |p| package p }
   
+  group "couchdb"
+  
+  user "couchdb" do
+    comment "CouchDB Administrator"
+    gid "couchdb"
+    home "/var/lib/couchdb"
+    shell "/bin/bash"
+  end
+  
   subversion "CouchDB Edge" do
     repository "http://svn.apache.org/repos/asf/couchdb/trunk"
     revision node[:couchdb][:revision]
