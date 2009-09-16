@@ -20,6 +20,7 @@
 define :runit_service, :directory => nil, :only_if => false, :options => Hash.new do
   
   params[:directory] ||= node[:runit][:sv_dir]
+  params[:init_script] ||= "/etc/init.d/#{params[:name]}"
   
   sv_dir_name = "#{params[:directory]}/#{params[:name]}"
   
@@ -54,7 +55,7 @@ define :runit_service, :directory => nil, :only_if => false, :options => Hash.ne
     end
   end
   
-  link "/etc/init.d/#{params[:name]}" do
+  link "#{params[:init_script]}" do
     to node[:runit][:sv_bin]
   end
   
