@@ -25,29 +25,29 @@ if edge_couch?
   
   subversion "CouchDB Edge" do
     repository "http://svn.apache.org/repos/asf/couchdb/trunk"
-    revision couchdb[:revision]
-    destination couchdb[:src_dir]
+    revision node[:couchdb][:revision]
+    destination node[:couchdb][:src_dir]
     action :sync
   end
   
   execute "bootstrap couchdb source" do
     command "./bootstrap"
-    cwd Chef::Config[:file_cache_path]
+    cwd node[:couchdb][:src_dir]
   end
   
   execute "configure couchdb" do
     command "./configure --prefix=#{couchdb[:configure_prefix]}"
-    cwd Chef::Config[:file_cache_path]
+    cwd node[:couchdb][:src_dir]
   end
   
   execute "make couchdb" do
     command "make"
-    cwd Chef::Config[:file_cache_path]
+    cwd node[:couchdb][:src_dir]
   end
   
   execute "make couchdb" do
     command "make install"
-    cwd Chef::Config[:file_cache_path]
+    cwd node[:couchdb][:src_dir]
   end
   
 else
@@ -62,8 +62,8 @@ end
 
 service "couchdb" do
   if edge_couch?
-    start_command "#{couchdb[:configure_prefix]}/etc/init.d/coucdb start"
-    start_command "#{couchdb[:configure_prefix]}/etc/init.d/coucdb stop"
+    start_command "#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb start"
+    start_command "#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb stop"
   else
     if platform?("centos","redhat","fedora")
       start_command "/sbin/service couchdb start &> /dev/null"
