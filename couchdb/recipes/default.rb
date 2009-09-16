@@ -76,7 +76,7 @@ if edge_couch?
     status_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb status"
     
     supports [ :restart, :status ]
-    action [ :enable, :start ]
+    action [ :start ]
     
   end
 else
