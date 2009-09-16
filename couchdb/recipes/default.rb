@@ -36,7 +36,7 @@ if edge_couch?
   end
   
   execute "configure couchdb" do
-    command "./configure --prefix=#{couchdb[:configure_prefix]}"
+    command "./configure --prefix=#{node[:couchdb][:configure_prefix]}"
     cwd node[:couchdb][:src_dir]
   end
   
