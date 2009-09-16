@@ -72,7 +72,7 @@ end
 if edge_couch?
   service "couchdb" do
     start_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb start"
-    start_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb stop"
+    stop_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb stop"
     status_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb status"
     
     supports [ :restart, :status ]
