@@ -60,16 +60,20 @@ directory "/var/lib/couchdb" do
   recursive true
 end
 
-service "couchdb" do
-  if edge_couch?
+if edge_couch?
+  service "couchdb" do
     start_command "#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb start"
     start_command "#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb stop"
-  else
+  end
+  supports [ :restart, :status ]
+  action [ :enable, :start ]
+else
+  service "couchdb" do
     if platform?("centos","redhat","fedora")
       start_command "/sbin/service couchdb start &> /dev/null"
       stop_command "/sbin/service couchdb stop &> /dev/null"
     end
+    supports [ :restart, :status ]
+    action [ :enable, :start ]
   end
-  supports [ :restart, :status ]
-  action [ :enable, :start ]
 end
