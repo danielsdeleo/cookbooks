@@ -64,9 +64,11 @@ if edge_couch?
   service "couchdb" do
     start_command "#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb start"
     start_command "#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb stop"
+    
+    supports [ :restart, :status ]
+    action [ :enable, :start ]
+    
   end
-  supports [ :restart, :status ]
-  action [ :enable, :start ]
 else
   service "couchdb" do
     if platform?("centos","redhat","fedora")
