@@ -10,6 +10,7 @@ directly from source.
 EOH
 version           "0.7"
 supports          "ubuntu", ">= 8.10" # for package in APT
+depends           "runit" # only used for edge couch.
 
 %w{ rhel centos fedora }.each do |os|
   supports os # requires that CouchDB package is available in yum repositories

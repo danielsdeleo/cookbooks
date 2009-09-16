@@ -18,6 +18,7 @@
 # limitations under the License.
 
 if edge_couch?
+  include_recipe "runit"
   include_recipe "erlang"
   
   %w{ libc6 libicu-dev libtool libmozjs-dev libcurl4-gnutls-dev 
@@ -70,15 +71,8 @@ directory "/var/lib/couchdb" do
 end
 
 if edge_couch?
-  service "couchdb" do
-    start_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb start"
-    stop_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb stop"
-    status_command "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb status"
-    
-    supports [ :restart, :status ]
-    action [ :start ]
-    
-  end
+  runit_service "couchdb", :init_script => "/#{node[:couchdb][:configure_prefix]}/etc/init.d/couchdb start"
+  
 else
   service "couchdb" do
     if platform?("centos","redhat","fedora")
