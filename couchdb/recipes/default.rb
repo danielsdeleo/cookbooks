@@ -1,9 +1,11 @@
 #
 # Author:: Joshua Timberman <joshua@opscode.com>
+# Author:: Daniel DeLeo <dan@kallistec.com>
 # Cookbook Name:: couchdb
 # Recipe:: default
 #
 # Copyright 2008, OpsCode, Inc
+# Copyright 2009, Daniel DeLeo
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
