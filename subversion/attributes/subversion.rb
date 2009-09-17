@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: apache2
-# Recipe:: dav_svn 
+# Cookbook Name:: subversion
+# Attributes:: server
 #
-# Copyright 2008, OpsCode, Inc.
+# Copyright 2009, Daniel DeLeo
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
-package "libapache2-svn"
-
-apache_module "dav_svn"
+subversion Mash.new unless attribute?("subversion")
+default.subversion.repo_dir "/srv/svn"
+default.subversion.repo_name "repo"
+default.subversion.server_name "svn"    # hostname of apache virtual host

@@ -13,7 +13,9 @@
   },
   "version": "0.7.0",
   "recipes": {
-    "subversion": ""
+    "subversion": "",
+		"subversion::client": "Installs the subversion client",
+		"subversion::server": "Installs a subversion server with Apache2 mod_dav_svn"
   },
   "name": "subversion",
   "conflicting": {
