@@ -1,43 +1,43 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs python packages",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "python": ""
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
   },
-  "platforms": {
-    "ubuntu": [
+  "dependencies": {
 
-    ],
-    "debian": [
-
-    ]
   },
-  "version": "0.7.0",
-  "name": "python",
   "conflicting": {
 
   },
-  "attributes": {
-
-  },
+  "description": "Installs python packages",
   "providing": {
     "python": [
 
     ]
   },
-  "license": "Apache 2.0",
+  "platforms": {
+    "debian": [
+
+    ],
+    "ubuntu": [
+
+    ]
+  },
   "long_description": "",
+  "version": "0.7.0",
   "replacing": {
 
   },
-  "dependencies": {
+  "name": "python",
+  "maintainer": "Opscode, Inc.",
+  "attributes": {
+
+  },
+  "recommendations": {
 
   }
 }

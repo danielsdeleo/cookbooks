@@ -1,18 +1,26 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs and configures ntp as a client or server",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "ntp": ""
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
   },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "Installs and configures ntp as a client or server",
+  "providing": {
+    "ntp": [
+
+    ]
+  },
   "platforms": {
-    "ubuntu": [
+    "debian": [
 
     ],
     "fedora": [
@@ -21,77 +29,69 @@
     "centos": [
 
     ],
-    "redhat": [
+    "ubuntu": [
 
     ],
-    "debian": [
+    "redhat": [
 
     ]
   },
+  "long_description": "",
   "version": "0.7.0",
-  "name": "ntp",
-  "conflicting": {
+  "replacing": {
 
   },
+  "name": "ntp",
+  "maintainer": "Opscode, Inc.",
   "attributes": {
-    "ntp\/servers": {
+    "ntp/servers": {
+      "required": false,
       "default": [
         "0.us.pool.ntp.org",
         "1.us.pool.ntp.org"
       ],
       "type": "array",
-      "multiple_values": false,
-      "description": "Array of servers we should talk to",
+      "recipes": [
+
+      ],
       "display_name": "NTP Servers",
-      "recipes": [
-
-      ],
-      "required": false
+      "description": "Array of servers we should talk to",
+      "multiple_values": false
     },
-    "ntp\/is_server": {
-      "default": "false",
-      "type": "string",
-      "multiple_values": false,
-      "description": "Set to true if this is an NTP server",
-      "display_name": "NTP Is Server?",
-      "recipes": [
-
-      ],
-      "required": false
-    },
-    "ntp\/service": {
+    "ntp/service": {
+      "required": false,
       "default": "ntp",
       "type": "string",
-      "multiple_values": false,
-      "description": "Name of the NTP service",
-      "display_name": "NTP Service",
       "recipes": [
 
       ],
-      "required": false
+      "display_name": "NTP Service",
+      "description": "Name of the NTP service",
+      "multiple_values": false
+    },
+    "ntp/is_server": {
+      "required": false,
+      "default": "false",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "NTP Is Server?",
+      "description": "Set to true if this is an NTP server",
+      "multiple_values": false
     },
     "ntp": {
+      "required": false,
       "type": "hash",
-      "multiple_values": false,
-      "description": "Hash of NTP attributes",
-      "display_name": "NTP",
       "recipes": [
 
       ],
-      "required": false
+      "display_name": "NTP",
+      "description": "Hash of NTP attributes",
+      "multiple_values": false
     }
   },
-  "providing": {
-    "ntp": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
+  "recommendations": {
 
   }
 }

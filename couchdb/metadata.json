@@ -1,28 +1,33 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs CouchDB package and starts service",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "couchdb": ""
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
+  },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "Installs CouchDB package and starts service",
+  "providing": {
+    "couchdb": [
+
+    ]
   },
   "platforms": {
     "rhel": [
 
     ],
-    "freebsd": [
-
-    ],
-    "ubuntu": [
-      ">= 8.10"
-    ],
     "openbsd": [
 
+    ],
+    "debian": [
+      ">= 5.0"
     ],
     "fedora": [
 
@@ -30,29 +35,24 @@
     "centos": [
 
     ],
-    "debian": [
-      ">= 5.0"
+    "freebsd": [
+
+    ],
+    "ubuntu": [
+      ">= 8.10"
     ]
   },
-  "version": "0.8.0",
-  "name": "couchdb",
-  "conflicting": {
-
-  },
-  "attributes": {
-
-  },
-  "providing": {
-    "couchdb": [
-
-    ]
-  },
-  "license": "Apache 2.0",
   "long_description": "Installs the CouchDB package if it is available from an package repository on\nthe node. If the package repository is not available, CouchDB needs to be \ninstalled via some other method, either a backported package, or compiled \ndirectly from source. CouchDB is available on Red Hat-based systems through\nthe EPEL Yum Repository.\n",
+  "version": "0.8.0",
   "replacing": {
 
   },
-  "dependencies": {
+  "name": "couchdb",
+  "maintainer": "Opscode, Inc.",
+  "attributes": {
+
+  },
+  "recommendations": {
 
   }
 }

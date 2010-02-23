@@ -1,54 +1,49 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Installs and maintains php and php modules",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
+    "php::php4": "Install packages for PHP version 4",
     "php::module_fpdf": "Install the php-fpdf package",
+    "php::php5": "Install php5 packages and php.ini config file",
     "php::php5-cgi": "Install the php5-cgi package",
     "php::module_sqlite3": "Install the php5-sqlite3 package",
+    "php": "",
     "php::module_gd": "Install the php5-gd package",
     "php::module_ldap": "Install the php5-ldap package",
-    "php": "",
+    "php::module_apc": "Install the php5-apc package",
+    "php::module_memcache": "Install the php5-memcache package",
     "php::module_curl": "Install the php5-curl package",
     "php::module_mysql": "Install the php5-mysql package",
-    "php::module_apc": "Install the php5-apc package",
-    "php::pear": "Install the php-pear package",
-    "php::module_memcache": "Install the php5-memcache package",
-    "php::php4": "Install packages for PHP version 4",
     "php::module_fileinfo": "Install the php5-fileinfo package",
-    "php::module_pgsql": "Install the php5-pgsql packag",
-    "php::php5": "Install php5 packages and php.ini config file"
+    "php::pear": "Install the php-pear package",
+    "php::module_pgsql": "Install the php5-pgsql packag"
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
   },
-  "platforms": {
-    "ubuntu": [
-
-    ],
-    "debian": [
+  "dependencies": {
+    "apache2": [
 
     ]
   },
-  "version": "0.7.0",
-  "name": "php",
   "conflicting": {
 
   },
-  "attributes": {
-
-  },
+  "description": "Installs and maintains php and php modules",
   "providing": {
+    "php::php4": [
+
+    ],
     "php::module_fpdf": [
 
     ],
-    "php::php5-cgi": [
+    "php::php5": [
 
     ],
     "php": [
+
+    ],
+    "php::php5-cgi": [
 
     ],
     "php::module_sqlite3": [
@@ -60,42 +55,47 @@
     "php::module_ldap": [
 
     ],
+    "php::module_apc": [
+
+    ],
+    "php::module_memcache": [
+
+    ],
     "php::module_curl": [
 
     ],
     "php::module_mysql": [
 
     ],
-    "php::module_apc": [
+    "php::module_fileinfo": [
 
     ],
     "php::pear": [
 
     ],
-    "php::module_memcache": [
-
-    ],
-    "php::php4": [
-
-    ],
-    "php::module_fileinfo": [
-
-    ],
     "php::module_pgsql": [
-
-    ],
-    "php::php5": [
 
     ]
   },
-  "license": "Apache 2.0",
+  "platforms": {
+    "debian": [
+
+    ],
+    "ubuntu": [
+
+    ]
+  },
   "long_description": "",
+  "version": "0.7.0",
   "replacing": {
 
   },
-  "dependencies": {
-    "apache2": [
+  "name": "php",
+  "maintainer": "Opscode, Inc.",
+  "attributes": {
 
-    ]
+  },
+  "recommendations": {
+
   }
 }

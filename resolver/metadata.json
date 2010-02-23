@@ -1,24 +1,32 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Configures \/etc\/resolv.conf",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "resolver": ""
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
   },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "Configures /etc/resolv.conf",
+  "providing": {
+    "resolver": [
+
+    ]
+  },
   "platforms": {
-    "freebsd": [
-
-    ],
-    "ubuntu": [
-
-    ],
     "openbsd": [
+
+    ],
+    "debian": [
+
+    ],
+    "centos": [
 
     ],
     "fedora": [
@@ -27,68 +35,60 @@
     "macosx": [
 
     ],
-    "centos": [
+    "freebsd": [
+
+    ],
+    "ubuntu": [
 
     ],
     "redhat": [
 
-    ],
-    "debian": [
-
     ]
   },
+  "long_description": "",
   "version": "0.7.0",
-  "name": "resolver",
-  "conflicting": {
+  "replacing": {
 
   },
+  "name": "resolver",
+  "maintainer": "Opscode, Inc.",
   "attributes": {
-    "resolver\/nameservers": {
+    "resolver/nameservers": {
+      "required": false,
       "default": [
         ""
       ],
       "type": "array",
-      "multiple_values": false,
-      "description": "Default nameservers",
+      "recipes": [
+
+      ],
       "display_name": "Resolver Nameservers",
-      "recipes": [
-
-      ],
-      "required": false
+      "description": "Default nameservers",
+      "multiple_values": false
     },
-    "resolver": {
-      "type": "hash",
-      "multiple_values": false,
-      "description": "Hash of Resolver attributes",
-      "display_name": "Resolver",
-      "recipes": [
-
-      ],
-      "required": false
-    },
-    "resolver\/search": {
+    "resolver/search": {
+      "required": false,
       "default": "domain",
       "type": "string",
-      "multiple_values": false,
-      "description": "Default domain to search",
-      "display_name": "Resolver Search",
       "recipes": [
 
       ],
-      "required": false
+      "display_name": "Resolver Search",
+      "description": "Default domain to search",
+      "multiple_values": false
+    },
+    "resolver": {
+      "required": false,
+      "type": "hash",
+      "recipes": [
+
+      ],
+      "display_name": "Resolver",
+      "description": "Hash of Resolver attributes",
+      "multiple_values": false
     }
   },
-  "providing": {
-    "resolver": [
-
-    ]
-  },
-  "license": "Apache 2.0",
-  "long_description": "",
-  "replacing": {
-
-  },
-  "dependencies": {
+  "recommendations": {
 
   }
 }

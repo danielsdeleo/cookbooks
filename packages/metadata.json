@@ -1,15 +1,23 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Helper library to determine whether distribution-only packages are installed",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "packages": ""
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
+  },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "Helper library to determine whether distribution-only packages are installed",
+  "providing": {
+    "packages": [
+
+    ]
   },
   "platforms": {
     "centos": [
@@ -19,45 +27,37 @@
 
     ]
   },
-  "version": "0.8.0",
-  "name": "packages",
-  "conflicting": {
-
-  },
-  "attributes": {
-    "packages": {
-      "type": "hash",
-      "multiple_values": false,
-      "description": "Hash of Packages attributes",
-      "display_name": "Packages",
-      "recipes": [
-
-      ],
-      "required": false
-    },
-    "packages\/dist_only": {
-      "default": "false",
-      "type": "string",
-      "multiple_values": false,
-      "description": "Set to only use distribution-provided packages",
-      "display_name": "Packages Distribution Only?",
-      "recipes": [
-
-      ],
-      "required": false
-    }
-  },
-  "providing": {
-    "packages": [
-
-    ]
-  },
-  "license": "Apache 2.0",
   "long_description": "",
+  "version": "0.8.0",
   "replacing": {
 
   },
-  "dependencies": {
+  "name": "packages",
+  "maintainer": "Opscode, Inc.",
+  "attributes": {
+    "packages": {
+      "required": false,
+      "type": "hash",
+      "recipes": [
+
+      ],
+      "display_name": "Packages",
+      "description": "Hash of Packages attributes",
+      "multiple_values": false
+    },
+    "packages/dist_only": {
+      "required": false,
+      "default": "false",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "Packages Distribution Only?",
+      "description": "Set to only use distribution-provided packages",
+      "multiple_values": false
+    }
+  },
+  "recommendations": {
 
   }
 }

@@ -1,34 +1,21 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Configures apt and apt services",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "apt::proxy": "Set up an APT proxy",
     "apt": "",
     "apt::cacher": "Set up an APT cache"
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
   },
-  "platforms": {
-    "ubuntu": [
+  "dependencies": {
 
-    ],
-    "debian": [
-
-    ]
   },
-  "version": "0.8.0",
-  "name": "apt",
   "conflicting": {
 
   },
-  "attributes": {
-
-  },
+  "description": "Configures apt and apt services",
   "providing": {
     "apt::proxy": [
 
@@ -40,12 +27,25 @@
 
     ]
   },
-  "license": "Apache 2.0",
+  "platforms": {
+    "debian": [
+
+    ],
+    "ubuntu": [
+
+    ]
+  },
   "long_description": "",
+  "version": "0.8.0",
   "replacing": {
 
   },
-  "dependencies": {
+  "name": "apt",
+  "maintainer": "Opscode, Inc.",
+  "attributes": {
+
+  },
+  "recommendations": {
 
   }
 }

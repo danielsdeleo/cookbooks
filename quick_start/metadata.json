@@ -1,27 +1,35 @@
 {
-  "maintainer": "Opscode, Inc.",
-  "description": "Example cookbook for quick_start wiki document",
-  "recommendations": {
-
-  },
-  "maintainer_email": "cookbooks@opscode.com",
   "recipes": {
     "quick_start": ""
   },
+  "license": "Apache 2.0",
+  "maintainer_email": "cookbooks@opscode.com",
   "suggestions": {
 
   },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "Example cookbook for quick_start wiki document",
+  "providing": {
+    "quick_start": [
+
+    ]
+  },
   "platforms": {
+    "openbsd": [
+
+    ],
+    "debian": [
+
+    ],
     "solaris": [
 
     ],
-    "freebsd": [
-
-    ],
-    "ubuntu": [
-
-    ],
-    "openbsd": [
+    "centos": [
 
     ],
     "fedora": [
@@ -30,45 +38,37 @@
     "macosx": [
 
     ],
-    "centos": [
+    "freebsd": [
 
     ],
-    "debian": [
+    "ubuntu": [
 
     ],
     "redhat": [
 
     ]
   },
-  "version": "0.7.0",
-  "name": "quick_start",
-  "conflicting": {
-
-  },
-  "attributes": {
-    "quick_start\/deep_thought": {
-      "default": "If a tree falls in the forest...",
-      "type": "string",
-      "multiple_values": false,
-      "description": "A deep thought",
-      "display_name": "Quick Start Deep Thought",
-      "recipes": [
-
-      ],
-      "required": false
-    }
-  },
-  "providing": {
-    "quick_start": [
-
-    ]
-  },
-  "license": "Apache 2.0",
   "long_description": "",
+  "version": "0.7.0",
   "replacing": {
 
   },
-  "dependencies": {
+  "name": "quick_start",
+  "maintainer": "Opscode, Inc.",
+  "attributes": {
+    "quick_start/deep_thought": {
+      "required": false,
+      "default": "If a tree falls in the forest...",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "Quick Start Deep Thought",
+      "description": "A deep thought",
+      "multiple_values": false
+    }
+  },
+  "recommendations": {
 
   }
 }
