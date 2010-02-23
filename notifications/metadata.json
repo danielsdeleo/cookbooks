@@ -2,7 +2,7 @@
   "recipes": {
     "notifications": ""
   },
-  "license": "Proprietary, DO NOT DISTRIBUTE OUTSIDE OPSCODE BITCHES",
+  "license": "Apache 2.0",
   "maintainer_email": "dan@opscode.com",
   "suggestions": {
 
@@ -13,7 +13,7 @@
   "conflicting": {
 
   },
-  "description": "Sets an at exit hook which forwards exceptions to a cloudant DB",
+  "description": "Sets an at_exit hook which forwards exceptions to CouchDB and S3",
   "providing": {
     "notifications": [
 
