@@ -1,0 +1,52 @@
+{
+  "recipes": {
+    "notifications": ""
+  },
+  "license": "Proprietary, DO NOT DISTRIBUTE OUTSIDE OPSCODE BITCHES",
+  "maintainer_email": "dan@opscode.com",
+  "suggestions": {
+
+  },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "Sets an at exit hook which forwards exceptions to a cloudant DB",
+  "providing": {
+    "notifications": [
+
+    ]
+  },
+  "platforms": {
+    "debian": [
+
+    ],
+    "fedora": [
+
+    ],
+    "centos": [
+
+    ],
+    "ubuntu": [
+
+    ],
+    "redhat": [
+
+    ]
+  },
+  "long_description": "",
+  "version": "0.1.0",
+  "replacing": {
+
+  },
+  "name": "notifications",
+  "maintainer": "Dan DeLeo",
+  "attributes": {
+
+  },
+  "recommendations": {
+
+  }
+}
