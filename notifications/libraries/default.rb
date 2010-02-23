@@ -75,8 +75,6 @@ unless defined?(Chef::AT_EXIT_HOOK_INSERTED) && Chef::AT_EXIT_HOOK_INSERTED
     # No easy way to grab the node object in the at_exit hook :(
     node = $HACKY_WAY_TO_PASS_NODE_TO_EXIT_HOOK
 
-    puts node.notifications
-
     couchdb_notification_url = node[:notifications][:couchdb_notification_url]
     couchdb_notification_db  = node[:notifications][:notification_database]
     
