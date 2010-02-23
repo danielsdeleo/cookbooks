@@ -1,0 +1,52 @@
+{
+  "recipes": {
+    "epic_fail": ""
+  },
+  "license": "Proprietary, DO NOT DISTRIBUTE OUTSIDE OPSCODE BITCHES",
+  "maintainer_email": "dan@opscode.com",
+  "suggestions": {
+
+  },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "description": "guaranteed epic failure, that is all",
+  "providing": {
+    "epic_fail": [
+
+    ]
+  },
+  "platforms": {
+    "debian": [
+
+    ],
+    "fedora": [
+
+    ],
+    "centos": [
+
+    ],
+    "ubuntu": [
+
+    ],
+    "redhat": [
+
+    ]
+  },
+  "long_description": "",
+  "version": "0.1.0",
+  "replacing": {
+
+  },
+  "name": "epic_fail",
+  "maintainer": "Dan DeLeo",
+  "attributes": {
+
+  },
+  "recommendations": {
+
+  }
+}
