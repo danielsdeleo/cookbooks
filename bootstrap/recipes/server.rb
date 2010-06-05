@@ -64,7 +64,9 @@ end
 include_recipe "zlib"
 include_recipe "xml"
 
-%w{ chef-server chef-server-api chef-solr }.each do |gem|
+# The chef-server gem does not exist anymore. If it comes back, it will be a
+# meta-gem that just exists to depend on chef-server-api and -webui.
+%w{ chef-server-api chef-solr }.each do |gem|
   gem_package gem do
     version node[:bootstrap][:chef][:server_version]
   end
